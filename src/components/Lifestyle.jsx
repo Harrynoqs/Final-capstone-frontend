@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Lifestyle = () => {
-  return (
-    <div>Lifestyle</div>
-  )
-}
+const Lifestyle = () => (
+  <div>Lifestyle</div>
+);
 
-export default Lifestyle
+export default Lifestyle;

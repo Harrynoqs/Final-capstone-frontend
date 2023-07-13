@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Testlaptop = () => {
-  return (
-    <div>Testlaptop</div>
-  )
-}
+const Testlaptop = () => (
+  <div>Testlaptop</div>
+);
 
-export default Testlaptop
+export default Testlaptop;
