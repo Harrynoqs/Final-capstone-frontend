@@ -1,7 +1,7 @@
 
 .navbar {
   width: 20vw;
-  border: 2px solid red;
+  border-right: 2px solid rgb(226, 225, 225);
   display: flex;
   flex-direction: column;
   top: 0;
@@ -34,4 +34,19 @@
     text-decoration: none;
     color: black;
     padding-left: 10%;
+}
+.footnote{
+    font-size: 1vw;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+.icons{
+    width: 15vw;
+    display: flex;
+    justify-content: space-between;
+   
 }
