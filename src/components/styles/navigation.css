@@ -52,7 +52,10 @@
 }
 
 .icons {
-  width: 15vw;
+  width: 10vw;
   display: flex;
   justify-content: space-between;
+}
+.icons > a {
+  color: black;
 }
