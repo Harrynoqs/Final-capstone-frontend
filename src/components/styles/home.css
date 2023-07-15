@@ -27,9 +27,11 @@
   align-items: center;
   margin-left: 0;
 }
-.prev.disabled{
-    background-color: rgb(226, 224, 220);
+
+.prev.disabled {
+  background-color: rgb(226, 224, 220);
 }
+
 .triangle {
   background-color: transparent;
   margin-left: 60%;
@@ -49,9 +51,11 @@
   position: absolute;
   right: 0;
 }
-.next.disabled{
-    background-color: rgb(226, 224, 220);
+
+.next.disabled {
+  background-color: rgb(226, 224, 220);
 }
+
 .next-triangle {
   background-color: transparent;
   margin-left: 20%;
