@@ -10,5 +10,43 @@
 .homepage{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid red;
+    margin-left: 0;
 }
 
+.prev{
+    text-decoration: none;
+    height: 10vh;
+    width: 8vw;
+    background-color: aqua;
+    display: flex;
+    border-radius: 0px 40px 40px 0px;
+    align-items: center;
+
+}
+.triangle{
+    background-color: transparent;
+    margin-left: 60%;
+    transform: rotate(270deg);
+    width: 1vw;
+    color: white;
+}
+.next{
+    text-decoration: none;
+    height: 10vh;
+    width: 8vw;
+    background-color: aqua;
+    display: flex;
+    border-radius: 40px 0px 0px 40px;
+    align-items: center;
+
+}
+.next-triangle{
+    background-color: transparent;
+    margin-left: 20%;
+    transform: rotate(90deg);
+    width: 1vw;
+    color: white;
+}
