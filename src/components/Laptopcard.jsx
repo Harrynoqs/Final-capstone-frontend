@@ -5,6 +5,12 @@ import * as Falcons from 'react-icons/fa6';
 import * as Tiles from 'react-icons/ti';
 
 const Laptopcard = ({lappy}) => {
+
+  Laptopcard.propTypes = {
+    lappy: PropTypes.oneOfType([PropTypes.object]).isRequired,
+
+  };
+
   return (
 
     <div className='card'>

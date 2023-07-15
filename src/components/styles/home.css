@@ -5,25 +5,27 @@
     margin: 0;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .homepage{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    border: 2px solid red;
     margin-left: 0;
+    padding-left: 0;
+    width: 100%;
 }
 
 .prev{
     text-decoration: none;
     height: 10vh;
     width: 8vw;
-    background-color: aqua;
+    background-color: rgb(59, 190, 59);
     display: flex;
     border-radius: 0px 40px 40px 0px;
     align-items: center;
+    margin-left: 0;
 
 }
 .triangle{
@@ -37,10 +39,13 @@
     text-decoration: none;
     height: 10vh;
     width: 8vw;
-    background-color: aqua;
+    background-color: rgb(59, 190, 59);
     display: flex;
     border-radius: 40px 0px 0px 40px;
     align-items: center;
+    position: absolute;
+  right: 0;
+    
 
 }
 .next-triangle{
@@ -49,4 +54,11 @@
     transform: rotate(90deg);
     width: 1vw;
     color: white;
+}
+hr{
+    border-top: 3px dotted rgb(177, 177, 177);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 7vw;
 }

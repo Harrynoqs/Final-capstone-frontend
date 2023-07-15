@@ -34,7 +34,9 @@ const Home = () => {
 
   return (
     <div className='homecontainer'>
-      <h1>LATEST LAPTOP MODEL</h1>
+      <h1>LATEST MODELS</h1>
+      <p>Please Select a Laptop Model </p>
+      <hr></hr>
       <div className='homepage'>
       <NavLink className='prev' to='#' onClick={prePage}>
       <Remix.FiTriangle className='triangle' />
