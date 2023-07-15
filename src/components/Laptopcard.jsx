@@ -1,11 +1,10 @@
-import React from 'react'
-import './styles/laptopcard.css'
+import React from 'react';
+import './styles/laptopcard.css';
 import { NavLink } from 'react-router-dom';
 import * as Falcons from 'react-icons/fa6';
-import * as Tiles from 'react-icons/ti';
+import PropTypes from 'prop-types';
 
-const Laptopcard = ({lappy}) => {
-
+const Laptopcard = ({ lappy }) => {
   Laptopcard.propTypes = {
     lappy: PropTypes.oneOfType([PropTypes.object]).isRequired,
 
@@ -13,18 +12,18 @@ const Laptopcard = ({lappy}) => {
 
   return (
 
-    <div className='card'>
-        <img src={lappy.image} className='card-image'/>
-         <h2>{lappy.model}</h2>
-         <hr/>
-         <p>{lappy.description}</p>
-         <ul className="icon-container">
-         <div className="link-container"><NavLink to="#"><Falcons.FaFacebookF /></NavLink></div>
+    <div className="card">
+      <img src={lappy.image} className="card-image" alt={lappy.name} />
+      <h2>{lappy.model}</h2>
+      <hr />
+      <p>{lappy.description}</p>
+      <ul className="icon-container">
+        <div className="link-container"><NavLink to="#"><Falcons.FaFacebookF /></NavLink></div>
         <div className="link-container"><NavLink to="#"><Falcons.FaTwitter /></NavLink></div>
-        <div className="link-container"><NavLink to="#"><Falcons.FaChalkboard/></NavLink></div>
+        <div className="link-container"><NavLink to="#"><Falcons.FaChalkboard /></NavLink></div>
       </ul>
-         </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Laptopcard
+export default Laptopcard;

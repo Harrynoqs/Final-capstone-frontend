@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import './styles/home.css';
-import Laptopcard from './Laptopcard';
 import { NavLink } from 'react-router-dom';
-import * as Remix from "react-icons/fi";
+import * as Remix from 'react-icons/fi';
+import Laptopcard from './Laptopcard';
 
 const Home = () => {
   const { laptoplibrary } = useSelector((state) => state.laptops);
@@ -33,24 +33,23 @@ const Home = () => {
   }, [currentPage, totalPages]);
 
   return (
-    <div className='homecontainer'>
+    <div className="homecontainer">
       <h1>LATEST MODELS</h1>
       <p>Please Select a Laptop Model </p>
-      <hr></hr>
-      <div className='homepage'>
-      <NavLink className='prev' to='#' onClick={prePage}>
-      <Remix.FiTriangle className='triangle' />
-          </NavLink>
+      <hr />
+      <div className="homepage">
+        <NavLink className={currentPage <= 1 ? 'prev disabled' : 'prev'} to="#" onClick={prePage}>
+          <Remix.FiTriangle className="triangle" />
+        </NavLink>
         {records.map((book) => (
           <Laptopcard key={book.id} lappy={book} />
         ))}
-          <NavLink className='next' to='#' onClick={nextPage}>
-          <Remix.FiTriangle className='next-triangle' />
-          </NavLink>
+        <NavLink className={currentPage >= totalPages ? 'next disabled' : 'next'} to="#" onClick={nextPage}>
+          <Remix.FiTriangle className="next-triangle" />
+        </NavLink>
       </div>
-        
+
     </div>
   );
 };
-
 export default Home;
