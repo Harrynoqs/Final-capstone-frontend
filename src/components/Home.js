@@ -1,34 +1,25 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Bookcard from './Bookcard';
-import AddBook from './AddBook';
-import { getBooks } from '../redux/books/booksSlice';
-
+import './styles/home.css'
+import Laptopcard from './Laptopcard';
 const Home = () => {
-  const { laptoplibrary } = useSelector((state) => state.book);
+  const { laptoplibrary } = useSelector((state) => state.laptops);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getBooks());
-  },
-  [dispatch, success]);
-
-  if (isLoading) {
-    return (
-      <h3>Loading...</h3>
-    );
-  }
 
   return (
-    <div>
-      { bookslibrary.map((books) => (
+    <div className='homecontainer'>   
+        <h1>LATEST LAPTOP MODEL</h1>
+       <div className='homepage'>
+      { laptoplibrary.map((books) => (
 
-        <Bookcard key={books.item_id} book={books} />
+        <Laptopcard  key={books.id} lappy={books} />
+        
       ))}
-      <AddBook />
+
     </div>
+    </div>
+
   );
 };
 
-export default Booklist;
+export default Home;

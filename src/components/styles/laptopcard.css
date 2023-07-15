@@ -1,0 +1,42 @@
+.card{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    align-items: center;
+    justify-content: center;
+}
+.card-image{
+    width: 60%;
+}
+.card >hr{
+    border-top: 3px dotted rgb(177, 177, 177);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 7vw;
+}
+.card > p{
+    text-align: center;
+    color: rgb(177, 177, 177);
+}
+.link-container{
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgb(177, 177, 177);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.icon-container{
+    display: flex;
+    justify-content: space-between;
+    width: 10vw;
+    bottom: 0;
+    position: relative;
+}
+
+.link-container > a{
+    color: rgb(211, 212, 212);
+}
