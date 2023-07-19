@@ -9,11 +9,11 @@ const Home = () => {
   const { laptoplibrary } = useSelector((state) => state.laptops);
   const [currentPage, setCurrentPage] = useState(1);
   const displayPerPage = 2;
-  const totalPages = Math.ceil(laptoplibrary.length / displayPerPage);
+  const totalPages = laptoplibrary ? Math.ceil(laptoplibrary.length / displayPerPage) : 0;
   const startIndex = (currentPage - 1) * displayPerPage;
-  const endIndex = Math.min(startIndex + displayPerPage, laptoplibrary.length);
-  const records = laptoplibrary.slice(startIndex, endIndex);
-
+  const endIndex = Math.min(startIndex + displayPerPage, laptoplibrary?.length || 0);
+  const records = laptoplibrary ? laptoplibrary.slice(startIndex, endIndex) : [];
+  console.log(laptoplibrary);
   const prePage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className="homecontainer">
       <h1>LATEST MODELS</h1>
-      <p>Please Select a Laptop Model </p>
+      <p>Please Select a Laptop Model</p>
       <hr />
       <div className="homepage">
         <NavLink className={currentPage <= 1 ? 'prev disabled' : 'prev'} to="#" onClick={prePage}>
@@ -48,8 +48,8 @@ const Home = () => {
           <Remix.FiTriangle className="next-triangle" />
         </NavLink>
       </div>
-
     </div>
   );
 };
+
 export default Home;
