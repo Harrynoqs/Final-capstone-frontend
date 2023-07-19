@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import laptopReducer from './laptop/laptopSlice';
+import { laptopSlice } from './laptop/laptopSlice';
 
 const store = configureStore({
   reducer: {
-    laptops: laptopReducer,
+    laptops: laptopSlice.reducer,
   },
 });
 
