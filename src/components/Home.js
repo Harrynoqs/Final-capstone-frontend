@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './styles/home.css';
 import { NavLink } from 'react-router-dom';
 import * as Remix from 'react-icons/fi';
 import Laptopcard from './Laptopcard';
-import { fetchLaptops } from '../redux/laptop/laptopSlice';
 
 const Home = () => {
-  const dispatch = useDispatch();
   const { LaptopList, isLoading, error } = useSelector((state) => state.laptops);
   const [currentPage, setCurrentPage] = useState(1);
   const displayPerPage = 3;
   const [records, setRecords] = useState([]);
-
-  useEffect(() => {
-    dispatch(fetchLaptops());
-  }, [dispatch]);
 
   const totalPages = Math.ceil(LaptopList.length / displayPerPage);
 
