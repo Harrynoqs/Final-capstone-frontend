@@ -18,7 +18,7 @@ const Home = () => {
   const totalPages = laptoplibrary ? Math.ceil(laptoplibrary.length / displayPerPage) : 0;
   const startIndex = (currentPage);
   const endIndex = startIndex + displayPerPage;
- 
+
   const prePage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
