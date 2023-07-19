@@ -13,7 +13,7 @@ const Laptopcard = ({ lappy }) => {
   return (
 
     <div className="card">
-      <img src={lappy.image} className="card-image" alt={lappy.name} />
+      <img src={lappy.image_url} className="card-image" alt={lappy.name} />
       <h2>{lappy.model}</h2>
       <hr />
       <p>{lappy.description}</p>
