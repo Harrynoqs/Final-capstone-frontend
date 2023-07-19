@@ -14,7 +14,7 @@ const Laptopcard = ({ lappy }) => {
 
     <div className="card">
       <img src={lappy.image_url} className="card-image" alt={lappy.name} />
-      <h2>{lappy.model}</h2>
+      <h2>{lappy.name}</h2>
       <hr />
       <p>{lappy.description}</p>
       <ul className="icon-container">
