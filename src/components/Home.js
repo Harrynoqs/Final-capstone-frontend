@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './styles/home.css';
 import { NavLink } from 'react-router-dom';
 import * as Remix from 'react-icons/fi';
 import Laptopcard from './Laptopcard';
+import { fetchLaptops } from '../redux/laptop/laptopSlice';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchLaptops());
+  },
+  [dispatch]);
   const { laptoplibrary } = useSelector((state) => state.laptops);
   const [currentPage, setCurrentPage] = useState(1);
-  const displayPerPage = 2;
+  const displayPerPage = 3;
   const totalPages = laptoplibrary ? Math.ceil(laptoplibrary.length / displayPerPage) : 0;
-  const startIndex = (currentPage - 1) * displayPerPage;
-  const endIndex = Math.min(startIndex + displayPerPage, laptoplibrary?.length || 0);
-  const records = laptoplibrary ? laptoplibrary.slice(startIndex, endIndex) : [];
-  console.log(laptoplibrary);
+  const startIndex = (currentPage);
+  const endIndex = startIndex + displayPerPage;
+ 
   const prePage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -26,25 +31,19 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    if (currentPage > totalPages) {
-      setCurrentPage(totalPages);
-    }
-  }, [currentPage, totalPages]);
-
   return (
     <div className="homecontainer">
       <h1>LATEST MODELS</h1>
       <p>Please Select a Laptop Model</p>
       <hr />
       <div className="homepage">
-        <NavLink className={currentPage <= 1 ? 'prev disabled' : 'prev'} to="#" onClick={prePage}>
+        <NavLink className={currentPage === 1 ? 'prev disabled' : 'prev'} to="#" onClick={prePage}>
           <Remix.FiTriangle className="triangle" />
         </NavLink>
-        {records.map((book) => (
+        {laptoplibrary.slice(startIndex, endIndex).map((book) => (
           <Laptopcard key={book.id} lappy={book} />
         ))}
-        <NavLink className={currentPage >= totalPages ? 'next disabled' : 'next'} to="#" onClick={nextPage}>
+        <NavLink className={currentPage === totalPages ? 'next disabled' : 'next'} to="#" onClick={nextPage}>
           <Remix.FiTriangle className="next-triangle" />
         </NavLink>
       </div>
