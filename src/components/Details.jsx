@@ -24,22 +24,28 @@ const Details = () => {
       </div>
       <div className="detail-card">
         <h1>{LaptopDetails[0].name}</h1>
-        <p>
+
+        {/* <p className="detail-child">
+          Description:
+          {' '}
+          {LaptopDetails[0].description}
+        </p> */}
+        <p className="detail-child">
           Price:
           {' '}
           {LaptopDetails[0].price}
         </p>
-        <p>
+        <p className="detail-child">
           RAM Size:
           {' '}
           {LaptopDetails[0].ram_size}
         </p>
-        <p>
+        <p className="detail-child">
           ROM Size:
           {' '}
           {LaptopDetails[0].rom_size}
         </p>
-        <p>
+        <p className="detail-child">
           Model Year:
           {' '}
           {LaptopDetails[0].model_year}
