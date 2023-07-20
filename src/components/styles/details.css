@@ -1,0 +1,17 @@
+.image-detail {
+    width: 70%;
+}
+
+.detail-container {
+    display: flex;
+    padding: 2%;
+}
+
+.detail-card {
+    display: flex;
+    flex-direction: column;
+
+}
+.detail-card>p:nth-child(even) {
+    background-color: rgb(212, 212, 212);
+  }
