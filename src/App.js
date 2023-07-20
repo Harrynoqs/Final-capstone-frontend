@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import Lifestyle from './components/Lifestyle';
 import Shop from './components/Shop';
 import Testlaptop from './components/Testlaptop';
+import Details from './components/Details';
 import { fetchLaptops } from './redux/laptop/laptopSlice';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/lifestyle" element={<Lifestyle />} exact />
           <Route path="/shop" element={<Shop />} exact />
           <Route path="/test" element={<Testlaptop />} exact />
+          <Route path="/details/:id" element={<Details />} exact />
         </Routes>
       </div>
     </Router>
